@@ -1,0 +1,99 @@
+@media only screen and (max-width: 991px) {
+  body{
+    overflow: auto;
+  }
+  section {
+    float: none;
+    width: 80%;
+    text-align: left;
+    padding-bottom: 30px;
+    position: relative;
+    border-width: 15px;
+    margin-bottom: 15px;
+  }
+  .f_left, .f_right{
+    float: left;
+    width: 100%;
+  }
+
+  .text-left, .text-center, .text-right,.my-download{
+    text-align: center;
+  }
+
+  .line,.profile_desc_content .profile_desc_text{
+    width: 100%;
+    text-align: center;
+  }
+  .my-experience .exp-rt-content{
+    border: 0;
+  }
+  .blog-content .post-img{
+    width: 100%;
+  }
+
+  .blog-content .blog-box{
+    width: 100%;
+    padding: 15px 0px 0px 0px;
+  }
+
+  .blog-content .blog-item{
+    margin-bottom: 15px;
+  }
+
+  #mainnav{
+    width: 40px;
+  }
+
+  ul.nav-logo{
+    left: 40px;
+  }
+
+  .nav-logo {
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+  }
+  .copy-text,.top-nav .copy-text{
+    padding: 10px 15px 0px 15px;
+  }
+
+  .right-logo-slot{
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .top-logo-slot {
+    height: 40px;
+    line-height: 40px;
+    right: -40px;
+    top: -25px;
+  }
+
+  .right-nav .copy-text {
+    right: -100px;
+    bottom: 140px;
+  }
+
+  .bottom-logo-slot {
+    height: 40px;
+    line-height: 40px;
+    left: -40px;
+    bottom: -15px;
+  }
+
+  .top-logo-slot span, .right-logo-slot span, .bottom-logo-slot span {
+    font-size: 16px;
+  }
+
+  .prices.price-style-2{
+    min-width: 700px;
+  }
+  .price-container a.button{
+    padding: 10px 15px;
+  }
+  .price-container .price-header span{
+    font-size: 20px;
+  }
+}
+
+
