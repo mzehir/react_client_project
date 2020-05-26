@@ -6,7 +6,6 @@ const Hakkimda = () => {
     const [isDeneyimiList, setisDeneyimiList] = useState([])
     const [egitimDeneyimiList, setegitimDeneyimiList] = useState([])
 
-
     useEffect(() => {
         firebase.getIsDeneyimiList().then(((data) => {
             if (data) {
@@ -14,7 +13,6 @@ const Hakkimda = () => {
             }
         }))
     }, [])
-
 
     useEffect(() => {
         firebase.getEgitimDeneyimiList().then(((data) => {

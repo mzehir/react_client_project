@@ -15,7 +15,7 @@ const Yonlendirici = () => {
            
         }))
         var date = new Date()
-        document.getElementById("date").innerHTML =date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + (date.getUTCDate() + 1);
+        document.getElementById("date").innerHTML =(date.getUTCDate() + 0) + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
         
     }, [])
 
@@ -102,7 +102,7 @@ const Yonlendirici = () => {
             </div>
             <div className="right-nav">
                 <ul className="right-logo">
-            <li className="right-logo-slot"><span id="date"></span></li>
+            <li className="right-logo-slot"><span id=""></span></li>
                 </ul>
                 <div className="copy-text">
                     <p><a href="#">Mümin ZEHİR Kişisel Website</a></p>
@@ -110,7 +110,7 @@ const Yonlendirici = () => {
             </div>
             <div className="bottom-nav">
                 <ul className="bottom-logo">
-                    <li className="bottom-logo-slot"><span id="clock"></span></li>
+                    <li className="bottom-logo-slot"><span id="date"></span></li>
                 </ul>
                 <div className="copy-text">
                     <p>Copyright © 2020. Her Hakkı Saklıdır.</p>

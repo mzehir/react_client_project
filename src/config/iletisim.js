@@ -10,9 +10,14 @@ class İletisim {
 
     async sendMail(gelen) {
         let data = gelen;
-        await axios.post('/api/form', {
+        debugger
+       let gelenData= await axios.post('/api/form', {
            data
         })
+        debugger
+        if (gelenData.data.mesaj===200) {
+            alert(data.konu + " " + "Konulu Mesajınız Gönderilmiştir.")
+        }
     }
 
 }

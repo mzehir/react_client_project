@@ -1,7 +1,5 @@
-// import React, { Component } from 'react'
 import React, { useEffect, useState } from 'react';
 import firebase from '../config/iletisim';
-
 
 const İletisim = () => {
     const [iletisimList, setiletisimList] = useState([])
@@ -17,7 +15,6 @@ const İletisim = () => {
             }
         }))
     }, [])
-
 
     return (
         <section className="section" id="contact">
@@ -55,12 +52,12 @@ const İletisim = () => {
     async function sendToMail() {
         try {
             var data = {
-                name : name,
-                email : email,
-                konu : konu,
-                message : message
+                name: name,
+                email: email,
+                konu: konu,
+                message: message
             }
-            debugger
+
             await firebase.sendMail(data)
         } catch (error) {
             alert(error.message)

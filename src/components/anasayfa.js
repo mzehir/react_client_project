@@ -38,7 +38,6 @@ const Anasayfa = () => {
                             <ul className="personal-info">
                                 <li><span>Meslek:</span> {kisiselBilgilerList.Meslek} </li>
                                 <li><span>E-mail:</span> {kisiselBilgilerList.email} </li>
-                                {/* <li><span>E-mail:</span> asmith@domain.com </li> */}
                                 <li><span>Telefon:</span> {kisiselBilgilerList.telefonNo} </li>
                                 {/* <li><span href="tel:0541 952 59 20">Telefon:</span> {kisiselBilgilerList.telefonNo} </li> */}
                             </ul>
@@ -53,7 +52,7 @@ const Anasayfa = () => {
                         </div>
 
                         <div className="owner col-md-4 col-xs-12 text-center">
-                            <img src={profilFoto} alt="Uploaded images" />
+                            <img src={profilFoto} alt="Mümin ZEHİR" />
                             <h3 className="title">{kisiselBilgilerList.isimSoyİsim}</h3>
                             <div id="myCarousel-owner" className="carousel slide">
                                 <div className="carousel-inner">
