@@ -3,6 +3,7 @@ import firebase from '../config/iletisim';
 
 const İletisim = () => {
     const [iletisimList, setiletisimList] = useState([])
+
     const [name, setname] = useState('')
     const [email, setemail] = useState('')
     const [konu, setkonu] = useState('')
@@ -35,7 +36,7 @@ const İletisim = () => {
                             </div>
                         </div>
                         <div className="col-md-6 col-sm-6 con-form fadeIn">
-                            <form onSubmit={e => e.preventDefault() && false} id="contactform" method="POST" className="c_form">
+                            <form onSubmit={e => e.preventDefault() && false} id="contactform" className="c_form">
                                 <input onChange={e => setname(e.target.value)} name="name" type="text" id="inputName" className="c_input" placeholder="İsim" />
                                 <input onChange={e => setemail(e.target.value)} name="email" type="text" id="inputMail" className="c_input" placeholder="Email" />
                                 <input onChange={e => setkonu(e.target.value)} name="konu" type="text" id="inputSubject" className="c_input" placeholder="Konu" />
@@ -50,18 +51,30 @@ const İletisim = () => {
     )
 
     async function sendToMail() {
-        try {
-            var data = {
-                name: name,
-                email: email,
-                konu: konu,
-                message: message
-            }
+        if (!name) {
+            alert("Lütfen isim bilgisini doldurun.")
+        } else if (!email) {
+            alert("Lütfen email bilgisini doldurun.")
+        } else if (!konu) {
+            alert("Lütfen konu bilgisini doldurun.")
+        } else if (!message) {
+            alert("Lütfen bir mesaj yazın.")
+        } else {
+            try {
+                var data = {
+                    name: name,
+                    email: email,
+                    konu: konu,
+                    message: message
+                }
 
-            await firebase.sendMail(data)
-        } catch (error) {
-            alert(error.message)
+                await firebase.sendMail(data)
+                alert("Mesajınız Gönderilmiştir.")
+            } catch (error) {
+                alert(error.message)
+            }
         }
+
     }
 
 }

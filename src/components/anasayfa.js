@@ -7,7 +7,6 @@ const Anasayfa = () => {
     const [yetenekDalVeYuzdeList, setyetenekDalVeYuzdeList] = useState([])
     const [sosyalMedyaHesapList, setsosyalMedyaHesapList] = useState([])
     const [profilFoto, setprofilFoto] = useState([])
-
     const [cvBenim, setcvBenim] = useState([])
 
     useEffect(() => {
@@ -18,7 +17,6 @@ const Anasayfa = () => {
                 sethakkimdaList(data.hakkimda)
                 setsosyalMedyaHesapList(data.sosyalmedyahesap)
                 setprofilFoto(data.foto)
-
                 setcvBenim(data.cv)
             }
         }))
@@ -38,8 +36,8 @@ const Anasayfa = () => {
                             <ul className="personal-info">
                                 <li><span>Meslek:</span> {kisiselBilgilerList.Meslek} </li>
                                 <li><span>E-mail:</span> {kisiselBilgilerList.email} </li>
-                                <li><span>Telefon:</span> {kisiselBilgilerList.telefonNo} </li>
-                                {/* <li><span href="tel:0541 952 59 20">Telefon:</span> {kisiselBilgilerList.telefonNo} </li> */}
+                                {/* <li><span>Telefon:</span> {kisiselBilgilerList.telefonNo} </li> */}
+                                <li><span href="tel:0541 952 59 20">Telefon:</span> {kisiselBilgilerList.telefonNo} </li>
                             </ul>
 
                             <ul className="head-social">

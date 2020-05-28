@@ -1,6 +1,4 @@
 import firebase from './config';
-import axios from 'axios'
-
 class İletisim {
 
     async getIletisimList() {
@@ -8,15 +6,29 @@ class İletisim {
         return iletisimBilgileriDto.get('İletişim Bilgileri')
     }
 
+    async getMail() {
+        const mailDto = await firebase.db.collection('admin').doc('Gelen Mailler').get()
+        return mailDto.get('İleti Var')
+    }
+
     async sendMail(gelen) {
-        let data = gelen;
-        debugger
-       let gelenData= await axios.post('/api/form', {
-           data
-        })
-        debugger
-        if (gelenData.data.mesaj===200) {
-            alert(data.konu + " " + "Konulu Mesajınız Gönderilmiştir.")
+        let mailDto = await this.getMail()
+        if (!mailDto) {
+            let mail = [];
+            mail.push(gelen)
+            return firebase.db.collection('admin').doc('Gelen Mailler').set({
+                "İleti Var": mail
+            })
+        }
+        else {
+            let mail = [];
+            mailDto.push(gelen)
+            for (let i = 0; i < mailDto.length; i++) {
+                mail.push(mailDto[i])
+            }
+            return firebase.db.collection(`admin`).doc("Gelen Mailler").update({
+                "İleti Var": mail
+            })
         }
     }
 
